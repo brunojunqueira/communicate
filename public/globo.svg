@@ -1,0 +1,18 @@
+<svg version="1.2" baseProfile="tiny-ps" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="500" height="500">
+	<title>globo</title>
+	<defs>
+		<image  width="500" height="500" id="img1" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAfQAAAH0AQMAAADxGE3JAAAAAXNSR0IB2cksfwAAAANQTFRFAAAAp3o92gAAAAF0Uk5TAEDm2GYAAAA1SURBVHic7cExAQAAAMKg9U/tYQ2gAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAG59AAABhRLY9gAAAABJRU5ErkJggg=="/>
+	</defs>
+	<style>
+		tspan { white-space:pre }
+		.s0 { fill: none;stroke: #000000;stroke-width: 8 } 
+	</style>
+	<use id="Background" href="#img1" x="0" y="0" />
+	<path id="Forma 1" class="s0" d="m250 450c-110.6 0-200-89.4-200-200c0-110.6 89.4-200 200-200c110.6 0 200 89.4 200 200c0 110.6-89.4 200-200 200z" />
+	<path id="Forma 1 copy" class="s0" d="m250 450c-55.3 0-100-89.4-100-200c0-110.6 44.7-200 100-200c55.3 0 100 89.4 100 200c0 110.6-44.7 200-100 200z" />
+	<path id="Forma 2" class="s0" d="m249.5 50h1v400h-1v-400z" />
+	<path id="Forma 2 copy" class="s0" d="m249.5 50h1v400h-1v-400z" />
+	<path id="Forma 2 copy" class="s0" d="m75 342h350v1h-350v-1z" />
+	<path id="Forma 2 copy 3" class="s0" d="m75 155h350v1h-350v-1z" />
+	<path id="Forma 2 copy 2" class="s0" d="m50 250h400v1h-400v-1z" />
+</svg>
