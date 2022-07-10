@@ -1,6 +1,3 @@
-export default function Inbox(){
+import { Inbox } from "./Inbox";
 
-    return(<>
-        <h1>HOME</h1>
-    </>);
-}
+export default Inbox;

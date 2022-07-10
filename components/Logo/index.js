@@ -1,19 +1,20 @@
-import { Flex, Image, useBreakpointValue } from "@chakra-ui/react";
+import { Flex, Image } from "@chakra-ui/react";
+import useAuthContext from "../../hooks/useAuthContext";
+import useGlobalContext from "../../hooks/useGlobalContext";
 
-export default function Logo({type = "full", size = 65}){
-
-    const isMobile = useBreakpointValue({base: true, md:false});
-    const ajustableSize = (isMobile) ? size/2 : size;
+export default function Logo({type = "full", size = 65, ...rest}){
     
+    const { goTo } = useGlobalContext();
+    const { user } = useAuthContext();
 
     switch(type){
         case 'full':
             return(
-                <Flex as='p' justifyContent='center' alignItems='center' fontSize={ajustableSize} fontFamily='Source Code Pro, monospace'>C<Image height={ajustableSize} width={ajustableSize} src="/globo.svg"/>MMUNICATE</Flex>
+                <Flex as='p' onClick={()=>{ goTo('/')}} justifyContent='center' alignItems='center' fontSize={size} fontFamily='Source Code Pro, monospace' {...rest}>C<Image height={size} width={size} src="/globo.svg"/>MMUNICATE</Flex>
             );
         case 'minimalist':
             return(
-                <Image height={ajustableSize} width={ajustableSize} src="/globo.svg"></Image>
+                <Image onClick={user ? ()=>{ goTo('/inbox')} : ()=>{ goTo('/')}} cursor='pointer' height={size} width={size} src="/globo.svg" {...rest}></Image>
             );
         default:
             return(<h1>deu ruim</h1>);

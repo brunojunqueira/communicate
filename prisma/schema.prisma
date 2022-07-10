@@ -7,11 +7,37 @@ datasource db {
   url      = "file:./database.db"
 }
 
-model User {
-  id       Int     @id @default(autoincrement())
-  email    String  @unique
-  password String
-  name     String?
-  key      String?
-  hash     String  @unique
+model user {
+  id             Int          @id @unique @default(autoincrement())
+  email          String       @unique
+  hash           String       @unique
+  keys           key[]
+  boxes          box[]
+  metadata       usermetadata?
+  
+}
+
+model usermetadata {
+  id          Int       @id @default(autoincrement())
+  email       String    @unique
+  name        String
+  avatar_url  String?   
+  userId      Int       @unique
+  user        user      @relation(fields: [userId], references: [id])
+}
+
+model key {
+  id        Int      @id @default(autoincrement())
+  key       String?
+  keyhash   String   @unique
+  location  String
+  createdAt DateTime @default(now())
+  authorId  Int
+  author    user     @relation(fields: [authorId], references: [id])
+}
+
+model box {
+  id      Int  @id @default(autoincrement())
+  owner   user @relation(fields: [ownerID], references: [id])
+  ownerID Int
 }

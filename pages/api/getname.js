@@ -1,4 +1,4 @@
-import Prisma from "../../modules/Prisma"
+import Prisma from "../../prisma"
 import SHA256 from "../../modules/SHA256";
 
 export default async function handler(req, res) {
@@ -15,6 +15,5 @@ export default async function handler(req, res) {
         catch {res.status(401).send('Wait a minute, who are you?');}
     }
     else res.status(401).send('Wait a minute, who are you?');
-
 
 }
